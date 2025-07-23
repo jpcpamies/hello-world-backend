@@ -1,6 +1,8 @@
 using Serilog;
 using FluentValidation;
 using System.Threading.RateLimiting;
+using HelloWorldBackend.Configuration;
+using HelloWorldBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,8 +29,14 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// Configure OpenAI settings
+builder.Services.Configure<OpenAISettings>(builder.Configuration.GetSection(OpenAISettings.SectionName));
+
 // Add HttpClient factory
 builder.Services.AddHttpClient();
+
+// Register OpenAI service
+builder.Services.AddHttpClient<IOpenAIService, OpenAIService>();
 
 // Add FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
@@ -44,17 +52,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Add Rate Limiting
-builder.Services.AddRateLimiter(options =>
-{
-    options.AddFixedWindowLimiter("ApiPolicy", opt =>
-    {
-        opt.PermitLimit = 100;
-        opt.Window = TimeSpan.FromMinutes(1);
-        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
-        opt.QueueLimit = 5;
-    });
-});
+// Add Rate Limiting - TODO: Implement rate limiting
 
 // Add Health Checks
 builder.Services.AddHealthChecks();
@@ -77,14 +75,14 @@ app.UseHttpsRedirection();
 // Add security headers
 app.Use(async (context, next) =>
 {
-    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
-    context.Response.Headers.Add("X-Frame-Options", "DENY");
-    context.Response.Headers.Add("X-XSS-Protection", "1; mode=block");
+    context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    context.Response.Headers["X-Frame-Options"] = "DENY";
+    context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
     await next();
 });
 
 app.UseCors("AllowAll");
-app.UseRateLimiter();
+// app.UseRateLimiter(); // Disabled for now
 
 app.MapControllers();
 app.MapHealthChecks("/health");

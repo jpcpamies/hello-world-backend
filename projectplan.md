@@ -14,63 +14,63 @@
   - [x] System.Threading.RateLimiting (rate limiting)
   - [x] FluentValidation.AspNetCore (input validation)
   - [x] Microsoft.Extensions.Http (HttpClient factory)
-- [ ] Configure Program.cs with dependency injection
+- [x] Configure Program.cs with dependency injection
 
 ---
 
 ## 📦 Core Models & DTOs
-- [ ] Create `TextSummaryRequest` model
-  - [ ] Text property (string, required)
-  - [ ] MaxSummaryLength property (int, optional, default: 200)
-- [ ] Create `TextSummaryResponse` model
-  - [ ] Summary property (string)
-  - [ ] BulletPoints property (List<string>)
-  - [ ] ProcessedAt property (DateTime)
-  - [ ] TokensUsed property (int, optional)
-- [ ] Create `HealthCheckResponse` model
-- [ ] Add FluentValidation validators for request models
+- [x] Create `TextSummaryRequest` model
+  - [x] Text property (string, required)
+  - [x] MaxSummaryLength property (int, optional, default: 200)
+- [x] Create `TextSummaryResponse` model
+  - [x] Summary property (string)
+  - [x] BulletPoints property (List<string>)
+  - [x] ProcessedAt property (DateTime)
+  - [x] TokensUsed property (int, optional)
+- [x] Create `HealthCheckResponse` model
+- [x] Add FluentValidation validators for request models
 
 ---
 
 ## 🤖 OpenAI Service Integration
-- [ ] Create `IOpenAIService` interface
-- [ ] Implement `OpenAIService` class
-  - [ ] Configure HttpClient for OpenAI API calls
-  - [ ] Implement text summarization method
-  - [ ] Create prompt template for summarization + bullet points
-  - [ ] Handle API errors and rate limits
-  - [ ] Track token usage
-- [ ] Create OpenAI configuration models
-- [ ] Configure HttpClient with proper timeout and retry policies
+- [x] Create `IOpenAIService` interface
+- [x] Implement `OpenAIService` class
+  - [x] Configure HttpClient for OpenAI API calls
+  - [x] Implement text summarization method
+  - [x] Create prompt template for summarization + bullet points
+  - [x] Handle API errors and rate limits
+  - [x] Track token usage
+- [x] Create OpenAI configuration models
+- [x] Configure HttpClient with proper timeout and retry policies
 
 ---
 
 ## 🎮 API Controllers
-- [ ] Create `TextController` with API versioning (v1)
-  - [ ] POST `/api/v1/text/summarize` endpoint
-  - [ ] Input validation and error handling
-  - [ ] Async/await implementation
-- [ ] Create `HealthController`
-  - [ ] GET `/api/v1/health` endpoint
-  - [ ] Check OpenAI service availability
-  - [ ] Return application status
-- [ ] Implement global exception handling middleware
+- [x] Create `TextController` with API versioning (v1)
+  - [x] POST `/api/v1/text/summarize` endpoint
+  - [x] Input validation and error handling
+  - [x] Async/await implementation
+- [x] Create `HealthController`
+  - [x] GET `/api/v1/health` endpoint
+  - [x] Check OpenAI service availability
+  - [x] Return application status
+- [x] Implement global exception handling middleware
 
 ---
 
 ## ⚙️ Configuration & Security
-- [ ] Create `appsettings.json` configuration
-  - [ ] OpenAI API settings
-  - [ ] CORS configuration
-  - [ ] Logging configuration
-  - [ ] Rate limiting settings
-- [ ] Create `appsettings.Development.json`
-- [ ] Create `appsettings.Production.json`
-- [ ] Configure environment variables for secrets
-- [ ] Implement CORS for Azure Static Web Apps
-- [ ] Add rate limiting middleware
-- [ ] Configure security headers middleware
-- [ ] Setup structured logging with Serilog
+- [x] Create `appsettings.json` configuration
+  - [x] OpenAI API settings
+  - [x] CORS configuration
+  - [x] Logging configuration
+  - [ ] Rate limiting settings (TODO)
+- [x] Create `appsettings.Development.json`
+- [x] Create `appsettings.Production.json`
+- [x] Configure environment variables for secrets
+- [x] Implement CORS for Azure Static Web Apps
+- [ ] Add rate limiting middleware (TODO)
+- [x] Configure security headers middleware
+- [x] Setup structured logging with Serilog
 
 ---
 

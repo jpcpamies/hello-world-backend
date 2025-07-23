@@ -7,13 +7,13 @@
 
 ## 📋 Project Setup & Dependencies
 - [x] Initialize .NET 8 Web API project
-- [ ] Create proper folder structure (Controllers, Models, Services, Configuration, Middleware)
-- [ ] Add required NuGet packages:
-  - [ ] Swashbuckle.AspNetCore (Swagger/OpenAPI)
-  - [ ] Serilog.AspNetCore (structured logging)
-  - [ ] Microsoft.AspNetCore.RateLimiting (rate limiting)
-  - [ ] FluentValidation.AspNetCore (input validation)
-  - [ ] Microsoft.Extensions.Http (HttpClient factory)
+- [x] Create proper folder structure (Controllers, Models, Services, Configuration, Middleware)
+- [x] Add required NuGet packages:
+  - [x] Swashbuckle.AspNetCore (Swagger/OpenAPI)
+  - [x] Serilog.AspNetCore (structured logging)
+  - [x] System.Threading.RateLimiting (rate limiting)
+  - [x] FluentValidation.AspNetCore (input validation)
+  - [x] Microsoft.Extensions.Http (HttpClient factory)
 - [ ] Configure Program.cs with dependency injection
 
 ---

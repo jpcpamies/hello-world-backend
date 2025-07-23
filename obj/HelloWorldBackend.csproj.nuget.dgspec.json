@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend/HelloWorldBackend.csproj": {}
+    "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend.csproj": {}
   },
   "projects": {
-    "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend/HelloWorldBackend.csproj": {
+    "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend/HelloWorldBackend.csproj",
+        "projectUniqueName": "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend.csproj",
         "projectName": "HelloWorldBackend",
-        "projectPath": "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend/HelloWorldBackend.csproj",
+        "projectPath": "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend.csproj",
         "packagesPath": "/Users/jordipamies/.nuget/packages/",
-        "outputPath": "/Users/jordipamies/Documents/GitHub/hello-world-backend/HelloWorldBackend/obj/",
+        "outputPath": "/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jordipamies/.nuget/NuGet/NuGet.Config"
@@ -43,13 +43,29 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.18, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[9.0.3, )"
+            },
+            "System.Threading.RateLimiting": {
+              "target": "Package",
+              "version": "[9.0.7, )"
             }
           },
           "imports": [

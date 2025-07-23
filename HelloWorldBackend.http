@@ -1,0 +1,6 @@
+@HelloWorldBackend_HostAddress = http://localhost:5043
+
+GET {{HelloWorldBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

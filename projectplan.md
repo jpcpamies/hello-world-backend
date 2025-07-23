@@ -6,7 +6,7 @@
 ---
 
 ## 📋 Project Setup & Dependencies
-- [ ] Initialize .NET 8 Web API project
+- [x] Initialize .NET 8 Web API project
 - [ ] Create proper folder structure (Controllers, Models, Services, Configuration, Middleware)
 - [ ] Add required NuGet packages:
   - [ ] Swashbuckle.AspNetCore (Swagger/OpenAPI)

@@ -1,0 +1,43 @@
+2025-07-24 01:35:18.100 +02:00 [INF] Starting Hello World Backend API
+2025-07-24 01:35:18.269 +02:00 [INF] Now listening on: https://localhost:7198
+2025-07-24 01:35:18.273 +02:00 [INF] Now listening on: http://localhost:5043
+2025-07-24 01:35:18.317 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-24 01:35:18.319 +02:00 [INF] Hosting environment: Development
+2025-07-24 01:35:18.320 +02:00 [INF] Content root path: D:\source\pocs\github\hello-world-backend\src\HelloWorldBackend
+2025-07-24 01:35:24.583 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger - null null
+2025-07-24 01:35:24.757 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger - 404 0 null 183.1986ms
+2025-07-24 01:35:24.772 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7198/swagger, Response status code: 404
+2025-07-24 01:35:29.802 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger - null null
+2025-07-24 01:35:29.825 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger - 404 0 null 22.4845ms
+2025-07-24 01:35:29.845 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7198/swagger, Response status code: 404
+2025-07-24 01:35:34.206 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/ - null null
+2025-07-24 01:35:34.221 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/ - 301 0 null 15.1015ms
+2025-07-24 01:35:34.224 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/index.html - null null
+2025-07-24 01:35:34.310 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/index.html - 200 null text/html;charset=utf-8 86.2065ms
+2025-07-24 01:35:34.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/index.js - null null
+2025-07-24 01:35:34.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/index.css - null null
+2025-07-24 01:35:34.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger-ui-bundle.js - null null
+2025-07-24 01:35:34.348 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/index.js - 200 null application/javascript;charset=utf-8 24.647ms
+2025-07-24 01:35:34.362 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/index.css - 200 202 text/css 38.728ms
+2025-07-24 01:35:34.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/_vs/browserLink - null null
+2025-07-24 01:35:34.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger-ui.css - null null
+2025-07-24 01:35:34.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger-ui-standalone-preset.js - null null
+2025-07-24 01:35:34.326 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-24 01:35:34.421 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger-ui.css - 200 155175 text/css 96.7863ms
+2025-07-24 01:35:34.428 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger-ui-standalone-preset.js - 200 229223 text/javascript 104.5749ms
+2025-07-24 01:35:34.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger-ui-bundle.js - 200 1485750 text/javascript 76.4442ms
+2025-07-24 01:35:34.431 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 106.0397ms
+2025-07-24 01:35:34.464 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/_vs/browserLink - 200 null text/javascript; charset=UTF-8 124.9479ms
+2025-07-24 01:35:34.491 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - null null
+2025-07-24 01:35:34.514 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.1283ms
+2025-07-24 01:35:34.516 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/favicon-32x32.png - null null
+2025-07-24 01:35:34.538 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/favicon-32x32.png - 200 628 image/png 21.9401ms
+2025-07-24 01:37:02.427 +02:00 [INF] Starting Hello World Backend API
+2025-07-24 01:37:02.566 +02:00 [INF] Now listening on: https://localhost:7198
+2025-07-24 01:37:02.569 +02:00 [INF] Now listening on: http://localhost:5043
+2025-07-24 01:37:02.612 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-24 01:37:02.614 +02:00 [INF] Hosting environment: Development
+2025-07-24 01:37:02.615 +02:00 [INF] Content root path: D:\source\pocs\github\hello-world-backend\src\HelloWorldBackend
+2025-07-24 01:37:02.990 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7198/swagger - null null
+2025-07-24 01:37:03.062 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7198/swagger - 404 0 null 74.7066ms
+2025-07-24 01:37:03.068 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7198/swagger, Response status code: 404

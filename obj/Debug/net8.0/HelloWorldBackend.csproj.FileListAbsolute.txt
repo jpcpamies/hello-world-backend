@@ -1,11 +1,3 @@
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.csproj.AssemblyReference.cache
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.GeneratedMSBuildEditorConfig.editorconfig
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.AssemblyInfoInputs.cache
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.AssemblyInfo.cs
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.csproj.CoreCompileInputs.cache
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.MvcApplicationPartsAssemblyInfo.cs
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.MvcApplicationPartsAssemblyInfo.cache
-/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.sourcelink.json
 /Users/jordipamies/Documents/GitHub/hello-world-backend/bin/Debug/net8.0/appsettings.Development.json
 /Users/jordipamies/Documents/GitHub/hello-world-backend/bin/Debug/net8.0/appsettings.json
 /Users/jordipamies/Documents/GitHub/hello-world-backend/bin/Debug/net8.0/appsettings.Production.json
@@ -53,6 +45,14 @@
 /Users/jordipamies/Documents/GitHub/hello-world-backend/bin/Debug/net8.0/System.Text.Json.dll
 /Users/jordipamies/Documents/GitHub/hello-world-backend/bin/Debug/net8.0/System.Threading.RateLimiting.dll
 /Users/jordipamies/Documents/GitHub/hello-world-backend/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.csproj.AssemblyReference.cache
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.AssemblyInfoInputs.cache
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.AssemblyInfo.cs
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.csproj.CoreCompileInputs.cache
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.MvcApplicationPartsAssemblyInfo.cs
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.MvcApplicationPartsAssemblyInfo.cache
+/Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/HelloWorldBackend.sourcelink.json
 /Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/staticwebassets.build.json
 /Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/staticwebassets.development.json
 /Users/jordipamies/Documents/GitHub/hello-world-backend/obj/Debug/net8.0/staticwebassets/msbuild.HelloWorldBackend.Microsoft.AspNetCore.StaticWebAssets.props

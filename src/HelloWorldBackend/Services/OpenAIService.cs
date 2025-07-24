@@ -3,6 +3,9 @@ using HelloWorldBackend.Models;
 using Microsoft.Extensions.Options;
 using System.Text;
 using System.Text.Json;
+using Azure;
+using Azure.AI.OpenAI;
+using OpenAI;
 
 namespace HelloWorldBackend.Services;
 
@@ -97,29 +100,24 @@ public class OpenAIService : IOpenAIService
     {
         try
         {
-            var requestBody = new
-            {
-                model = _openAISettings.Model,
-                messages = new[]
-                {
-                    new { role = "user", content = "Hello" }
-                },
-                max_tokens = 5
-            };
+            var client = new OpenAIClient(
+                _openAISettings.ApiKey // Pass only the API key, not a Uri
+            );
+            // Use the OpenAIModelClient to list models for health check
+            var modelClient = client.GetOpenAIModelClient();
+            System.ClientModel.ClientResult<OpenAI.Models.OpenAIModelCollection> result = await modelClient.GetModelsAsync(cancellationToken);    
 
-            var jsonContent = JsonSerializer.Serialize(requestBody, new JsonSerializerOptions
+            if (result.Value.Any())
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
-
-            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("/chat/completions", httpContent, cancellationToken);
-            
-            return response.IsSuccessStatusCode;
+                // If at least one model is returned, the key is valid
+                return true;
+            }
+            // If no models, treat as unhealthy
+            return false;
         }
         catch (Exception ex)
         {
-            _logger.LogWarning(ex, "OpenAI health check failed");
+            _logger.LogWarning(ex, "OpenAI health check failed (SDK)");
             return false;
         }
     }
@@ -154,7 +152,7 @@ Text to summarize:
             
             if (trimmedLine.StartsWith("SUMMARY:", StringComparison.OrdinalIgnoreCase))
             {
-                summary = trimmedLine.Substring(8).Trim();
+                summary = trimmedLine[8..].Trim();
             }
             else if (trimmedLine.Equals("BULLET POINTS:", StringComparison.OrdinalIgnoreCase))
             {
@@ -162,14 +160,14 @@ Text to summarize:
             }
             else if (inBulletPointsSection && (trimmedLine.StartsWith("•") || trimmedLine.StartsWith("-") || trimmedLine.StartsWith("*")))
             {
-                bulletPoints.Add(trimmedLine.Substring(1).Trim());
+                bulletPoints.Add(trimmedLine[1..].Trim());
             }
         }
 
         // Fallback if parsing fails
         if (string.IsNullOrEmpty(summary))
         {
-            summary = content.Length > 500 ? content.Substring(0, 500) + "..." : content;
+            summary = content.Length > 500 ? content[..500] + "..." : content;
         }
 
         return new TextSummaryResponse

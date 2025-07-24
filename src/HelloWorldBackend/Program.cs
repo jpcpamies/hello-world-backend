@@ -1,36 +1,46 @@
-using Serilog;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Reflection;
+using System.Text.Json.Serialization;
 using FluentValidation;
-using System.Threading.RateLimiting;
 using HelloWorldBackend.Configuration;
 using HelloWorldBackend.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
+
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .WriteTo.File("logs/app-.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
-
-builder.Host.UseSerilog();
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 // Add services to the container
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new()
+builder.Services.AddSwaggerGen(c =>
 {
-    Title = "Hello World Backend API",
-    Version = "v1",
-    Description = ".NET 8 Web API for Hello World application with AI text summarization functionality"
-}));
+
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Hello World Backend API",
+        Version = "v1",
+        Description = ".NET 8 Web API for Hello World application with AI text summarization functionality"
+    });
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    c.DescribeAllParametersInCamelCase();
+    c.DocInclusionPredicate((_, _) => true);
+});
 
 // Configure OpenAI settings
 builder.Services.Configure<OpenAISettings>(builder.Configuration.GetSection(OpenAISettings.SectionName));
 
 // Add HttpClient factory
 builder.Services.AddHttpClient();
+
+// add application insights telemetry
+_ = builder.Services.AddApplicationInsightsTelemetry(builder.Configuration);
 
 // Register OpenAI service
 builder.Services.AddHttpClient<IOpenAIService, OpenAIService>();
@@ -99,16 +109,6 @@ app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks
     }
 });
 
-try
-{
-    Log.Information("Starting Hello World Backend API");
-    app.Run();
-}
-catch (Exception ex)
-{
-    Log.Fatal(ex, "Application terminated unexpectedly");
-}
-finally
-{
-    Log.CloseAndFlush();
-}
+app.Run();
+
+
